@@ -2,7 +2,7 @@
  * Note that these styles are loaded *before* editor styles, so that
  * editor-specific styles using the same selectors will take precedence.
  */
-.bg_profile_block .recipe-image {
+.bg-profile-block .recipe-image {
 	background: #f1f1f1;
 	float: right;
 	width: 50%;
@@ -10,31 +10,31 @@
 	text-align: center;
 }
 
-.bg_profile_block .recipe-image button {
+.bg-profile-block .recipe-image button {
 	margin-top: 30px;
 }
 
-.bg_profile_block .recipe-image button.image-button {
+.bg-profile-block .recipe-image button.image-button {
 	margin: 0;
 	padding: 0;
 	display: block;
 }
 
-.bg_profile_block .recipe-image img {
+.bg-profile-block .recipe-image img {
 	display: block;
 	z-index: 1;
 	position: relative;
 }
 
-.bg_profile_block h2 {
+.bg-profile-block h2 {
 	font-size: 1.5em;
 }
 
-.bg_profile_block ul {
+.bg-profile-block ul {
 	padding-left: 2.5em !important; /* Needs fix in Gutenberg. */
 }
 
-.bg_profile_block:after { 
+.bg-profile-block:after { 
 	content:""; 
 	clear:both; 
 	display: table; 

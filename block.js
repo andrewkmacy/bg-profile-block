@@ -8,8 +8,8 @@ const {
 } = wp.editor;
 const { Button } = wp.components;
 
-registerBlockType( 'bg_better_blocks/bg_profile_block', {
-	title: __( 'Example: Recipe Card (esnext)', 'bg_better_blocks' ),
+registerBlockType( 'bg-better-blocks/bg-profile-block', {
+	title: __( 'Example: Recipe Card (esnext)', 'bg-better-blocks' ),
 	icon: 'index-card',
 	category: 'layout',
 	attributes: {
@@ -72,7 +72,7 @@ registerBlockType( 'bg_better_blocks/bg_profile_block', {
 			<div className={ className }>
 				<RichText
 					tagName="h2"
-					placeholder={ __( 'Write Recipe title…', 'bg_better_blocks' ) }
+					placeholder={ __( 'Write Recipe title…', 'bg-better-blocks' ) }
 					value={ title }
 					onChange={ onChangeTitle }
 				/>
@@ -83,26 +83,26 @@ registerBlockType( 'bg_better_blocks/bg_profile_block', {
 						value={ mediaID }
 						render={ ( { open } ) => (
 							<Button className={ mediaID ? 'image-button' : 'button button-large' } onClick={ open }>
-								{ ! mediaID ? __( 'Upload Image', 'bg_better_blocks' ) : <img src={ mediaURL } alt={ __( 'Upload Recipe Image', 'bg_better_blocks' ) } /> }
+								{ ! mediaID ? __( 'Upload Image', 'bg-better-blocks' ) : <img src={ mediaURL } alt={ __( 'Upload Recipe Image', 'bg-better-blocks' ) } /> }
 							</Button>
 						) }
 					/>
 				</div>
-				<h3>{ __( 'Ingredients', 'bg_better_blocks' ) }</h3>
+				<h3>{ __( 'Ingredients', 'bg-better-blocks' ) }</h3>
 				<RichText
 					tagName="ul"
 					multiline="li"
-					placeholder={ __( 'Write a list of ingredients…', 'bg_better_blocks' ) }
+					placeholder={ __( 'Write a list of ingredients…', 'bg-better-blocks' ) }
 					value={ ingredients }
 					onChange={ onChangeIngredients }
 					className="ingredients"
 				/>
-				<h3>{ __( 'Instructions', 'bg_better_blocks' ) }</h3>
+				<h3>{ __( 'Instructions', 'bg-better-blocks' ) }</h3>
 				<RichText
 					tagName="div"
 					multiline="p"
 					className="steps"
-					placeholder={ __( 'Write the instructions…', 'bg_better_blocks' ) }
+					placeholder={ __( 'Write the instructions…', 'bg-better-blocks' ) }
 					value={ instructions }
 					onChange={ onChangeInstructions }
 				/>
@@ -125,7 +125,7 @@ registerBlockType( 'bg_better_blocks/bg_profile_block', {
 
 				{
 					mediaURL && (
-						<img className="recipe-image" src={ mediaURL } alt={ __( 'Recipe Image', 'bg_better_blocks' ) } />
+						<img className="recipe-image" src={ mediaURL } alt={ __( 'Recipe Image', 'bg-better-blocks' ) } />
 					)
 				}
 
