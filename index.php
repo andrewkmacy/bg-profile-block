@@ -15,10 +15,10 @@ defined( 'ABSPATH' ) || exit;
 /**
  * Load all translations for our plugin from the MO file.
 */
-add_action( 'init', 'gutenberg_examples_05_esnext_load_textdomain' );
+add_action( 'init', 'bg_profile_block_load_textdomain' );
 
-function gutenberg_examples_05_esnext_load_textdomain() {
-	load_plugin_textdomain( 'gutenberg-examples', false, basename( __DIR__ ) . '/languages' );
+function bg_profile_block_load_textdomain() {
+	load_plugin_textdomain( 'bg_better_blocks', false, basename( __DIR__ ) . '/languages' );
 }
 
 /**
@@ -27,7 +27,7 @@ function gutenberg_examples_05_esnext_load_textdomain() {
  *
  * Passes translations to JavaScript.
  */
-function gutenberg_examples_05_esnext_register_block() {
+function bg_profile_block_register_block() {
 
 	if ( ! function_exists( 'register_block_type' ) ) {
 		// Gutenberg is not active.
@@ -35,22 +35,22 @@ function gutenberg_examples_05_esnext_register_block() {
 	}
 
 	wp_register_script(
-		'gutenberg-examples-05-esnext',
+		'bg_profile_block',
 		plugins_url( 'block.build.js', __FILE__ ),
 		array( 'wp-blocks', 'wp-i18n', 'wp-element', 'wp-editor', 'underscore' ),
 		filemtime( plugin_dir_path( __FILE__ ) . 'block.build.js' )
 	);
 
 	wp_register_style(
-		'gutenberg-examples-05-esnext',
+		'bg_profile_block',
 		plugins_url( 'style.css', __FILE__ ),
 		array( ),
 		filemtime( plugin_dir_path( __FILE__ ) . 'style.css' )
 	);
 
-	register_block_type( 'gutenberg-examples/example-05-recipe-card-esnext', array(
-		'style' => 'gutenberg-examples-05-esnext',
-		'editor_script' => 'gutenberg-examples-05-esnext',
+	register_block_type( 'bg_better_blocks/bg_profile_block', array(
+		'style' => 'bg_profile_block',
+		'editor_script' => 'bg_profile_block',
 	) );
 
   if ( function_exists( 'wp_set_script_translations' ) ) {
@@ -59,8 +59,8 @@ function gutenberg_examples_05_esnext_register_block() {
      * plugin_dir_path( MY_PLUGIN ) . 'languages' ) ). For details see
      * https://make.wordpress.org/core/2018/11/09/new-javascript-i18n-support-in-wordpress/
      */
-    wp_set_script_translations( 'gutenberg-examples-05-esnext', 'gutenberg-examples' );
+    wp_set_script_translations( 'bg_profile_block', 'bg_better_blocks' );
   }
 
 }
-add_action( 'init', 'gutenberg_examples_05_esnext_register_block' );
+add_action( 'init', 'bg_profile_block_register_block' );
